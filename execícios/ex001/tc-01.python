@@ -1,0 +1,18 @@
+# Dados do problema
+T1 = 30  # Temperatura de entrada da solução de NaOH (°C)
+w1 = 83.000  # Vazão mássica da solução de NaOH (kg/h)
+w3 = 5.000  # Vazão mássica do vapor de água saturado alimentado ao trocador de calor (kg/h)
+h3_minus_h4 = 2.18065  # Calor latente de condensação fornecido pelo vapor de água saturado (kJ/kg)
+cp1_2 = 1.15  # Calor específico médio da solução de NaOH através do trocador de calor (cal/g·°C)
+Mf_t = 120  # Massa de solução de NaOH que preenche os tubos do trocador (kg)
+T2_guess = 60  # Palpite inicial para a temperatura de saída da solução de NaOH (°C)
+
+# Função para calcular a equação
+def equation(T, T1, w1, w3, h3_minus_h4, cp1_2, Mf_t):
+    return T - T1 + 0.8 * w3 * h3_minus_h4 / (w1 * cp1_2) - (Mf_t / w1) * (T / T1)
+
+# Resolvendo a equação usando fsolve do SciPy
+from scipy.optimize import fsolve
+
+T2 = fsolve(lambda T: equation(T, T1, w1 + 4000, w3, h3_minus_h4, cp1_2, Mf_t), T2_guess)
+print("Temperatura de saída da solução de NaOH (Variação brusca):", T2[0], "°C")

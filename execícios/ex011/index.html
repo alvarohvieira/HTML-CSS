@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem Dinâmica</title>
+</head>
+<body>
+    <h1>Imagem Dinâmica</h1>
+    <p>Tente abrir este site em vários dispositivos diferentes ou simplesmente almente e diminua o tamanh do seu navegador</p>
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/fogo-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto-m.png" type="image/png">
+        <img src="imagens/foto-g.png" alt="imagem flexível">
+    </picture>
+
+    <h1>Reproduzindo áudio</h1>
+    <p>Vamos aprender a reproduzir áudios em HTML5</p>
+    
+<audio preload="metadata" controls loop>
+    <source src="VacationUke - ALBIS.mp3" type="audio/mpeg">
+    <source src="VacationUke - ALBIS.ogg" type="audio/ogg">
+    <source src="VacationUke - ALBIS.wav" type="audio/wav">
+    <p>Infelizmente seu navegador não é capaz de reproduzir áudios <a href="VacationUke - ALBIS.mp3">clique aqui para baixar o áudio em MP3</a></p> 
+</audio>
+</body>
+</html>
