@@ -11,6 +11,15 @@ header{
     text-align: center;
     padding: 10vh 0px 10vh 0px;
 }
+header a{
+    text-decoration: none;
+    font-weight: bold;
+    color:white;
+}
+header a:hover{
+    text-decoration: underline;
+}
+
 h1{
     font-size: 17vh;
     text-decoration: none;
